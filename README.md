@@ -1,6 +1,6 @@
 # PaleyGraph
 Algorithms to find the longest clique in a Paley Graph (or the complementary of the Paley Graph)
-by using the library [Cliquer][https://users.aalto.fi/~pat/cliquer.html]
+by using the library [Cliquer](https://users.aalto.fi/~pat/cliquer.html)
 
 ## Usage
 
