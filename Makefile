@@ -33,16 +33,16 @@ all: Paley CoPaley test_paley
 
 
 
-Paley: Paley.o cliquer.o graph.o reorder.o
-	$(CC) $(LDFLAGS) -o $@ Paley.o cliquer.o graph.o reorder.o
+Paley: Paley.o cliquer.o graph.o reorder.o finitefield.o
+	$(CC) $(LDFLAGS) -o $@ Paley.o cliquer.o graph.o reorder.o finitefield.o
 
-CoPaley: CoPaley.o cliquer.o graph.o reorder.o
-	$(CC) $(LDFLAGS) -o $@ CoPaley.o cliquer.o graph.o reorder.o
+CoPaley: CoPaley.o cliquer.o graph.o reorder.o finitefield.o
+	$(CC) $(LDFLAGS) -o $@ CoPaley.o cliquer.o graph.o reorder.o finitefield.o
 
-test_paley: test_paley.o cliquer.o graph.o reorder.o
-	$(CC) $(LDFLAGS) -o $@ test_paley.o cliquer.o graph.o reorder.o
+test_paley: test_paley.o cliquer.o graph.o reorder.o  finitefield.o
+	$(CC) $(LDFLAGS) -o $@ test_paley.o cliquer.o graph.o reorder.o finitefield.o
 
-cl.o test_paley.o cliquer.o graph.o reorder.o: cliquer.h set.h graph.h misc.h reorder.h Makefile cliquerconf.h
+cl.o test_paley.o cliquer.o graph.o reorder.o: cliquer.h set.h finitefield.h graph.h misc.h reorder.h Makefile cliquerconf.h
 
 Paley.o: Paley.c
 	$(CC) $(CFLAGS) $(LONGOPTS) -o $@ -c $<
