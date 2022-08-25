@@ -15,11 +15,11 @@ int main(int argc, char *argv[]) {
     for(int num_modulos = 2; num_modulos<argc; num_modulos++)
       {
 	modulo = atoi(argv[num_modulos]);
-	printf("Search for CoPaley graph of order %d\n", modulo);
 	clique_default_options->time_function = NULL; 
 	g = construct_copalley_graph(modulo, exponent);
 	clique_default_options->output=stderr;
 	//clique_default_options->user_function = print_clique;
+	printf("Search for CoPaley graph of order %d\n", modulo);
 	set_t s=clique_find_single(g,0,0,FALSE,NULL);
 	custom_print_copaley(s,exponent,modulo);
       }
